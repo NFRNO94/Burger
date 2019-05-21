@@ -69,7 +69,7 @@ updateOne()
 
 module.exports = orm;
 
-**controller**
+**controller burgers_controller.js**
 
 let express = require("express");
 
