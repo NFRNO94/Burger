@@ -1,4 +1,4 @@
-/*let express = require("express");
+let express = require("express");
 
 let router = express.Router();
 
@@ -14,7 +14,7 @@ router.get("/", function(req, res) {
   });
 });
 
-router.post("/api/burgers", function(req, res) {
+/*router.post("/api/burgers", function(req, res) {
   burger.create(["name", "not devoured"], [req.body.burger_name, req.body.devoured], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
@@ -40,8 +40,8 @@ router.put("/api/burgers/:id", function(req, res) {
 
     }
   );
-});
+});*/
 
 
 
-module.exports = router;*/
+module.exports = router;
