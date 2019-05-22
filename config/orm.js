@@ -9,7 +9,7 @@ let orm = {
             cb(result);
         });
     },
-    //insertOne: function (tableInput, cb) {
+    insertOne: function (tableInput, cb) {
        // let queryString = "INSERT INTO ?? (name)"
     //},
     //updateOne: function () {
