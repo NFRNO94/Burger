@@ -1,20 +1,24 @@
-let connection = require("./connection.js");
+let connection = require("../config/connection.js");
 
 let orm = {
 
-    selectAll: function (tableInput, cb) {
-        let queryString = "SELECT * FROM " + tableInput + ";";
-        connection.query(queryString, [tableInput], function (err, result) {
+    selectAll: function (tableName, cb) {
+        connection.query("SELECT * FROM" + tableName + ";", function (err, result) {
             if (err) throw err;
             cb(result);
         });
     },
-    insertOne: function (tableInput, cb) {
-       // let queryString = "INSERT INTO ?? (name)"
-    //},
-    //updateOne: function () {
-
-    //}
+    insertOne: function (tableName, col_name, value, cb) {
+        connection.query("INSERT INTO " + tableName + " ( " + col_name + " ) " + " VALUES (?)", [value], function (err, result) {
+            if (err) throw err;
+            cb(result);
+        });
+    },
+    updateOne: function (tableName, set_col, set_val, colParam, valParam, cb) {
+        connection.query("UPDATE " + tableName + " SET " + set_col + " = ? WHERE " + colParam + " = ?", [set_val, valParam], function (err, result) {
+            cb(result);
+        })
+    }
 };
 
 
