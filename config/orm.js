@@ -2,14 +2,14 @@ let connection = require("../config/connection.js");
 
 let orm = {
 
-    selectAll: function (tableName, cb) {
-        connection.query("SELECT * FROM" + tableName + ";",
+    all: function (tableName, cb) {
+        connection.query("SELECT * FROM " + tableName + ";",
             function (err, result) {
                 if (err) throw err;
                 cb(result);
             });
     },
-    insertOne: function (tableName, col_name, value, cb) {
+    create: function (tableName, col_name, value, cb) {
         connection.query("INSERT INTO " + tableName
             + " ( " + col_name + " ) "
             + " VALUES (?)", [value],
@@ -18,7 +18,7 @@ let orm = {
                 cb(result);
             });
     },
-    updateOne: function (tableName, set_col, set_val, colParam, valParam, cb) {
+    update: function (tableName, set_col, set_val, colParam, valParam, cb) {
         connection.query("UPDATE " + tableName
             + " SET " + set_col
             + " = ? WHERE " + colParam
@@ -28,7 +28,7 @@ let orm = {
                 cb(result);
             });
     },
-    deleteOne: function (tableName, col_name, value, cb) {
+    delete: function (tableName, col_name, value, cb) {
         connection.query("DELETE FROM " + tableName
             + " WHERE " + col_name
             + " = ?", [value],

@@ -2,13 +2,13 @@ const orm = require("../config/orm.js");
 
 let burger = {
     all: function (cb) {
-        orm.selectAll("burgers", function (res) {
+        orm.all("burgers", function (res) {
             cb(res);
         });
     },
 
     create: function (value, cb) {
-        orm.insertOne("burgers", "burger_name", value, function (res) {
+        orm.create("burgers", "burger_name", value, function (res) {
             cb(res);
         });
     },
@@ -20,7 +20,7 @@ let burger = {
     },
 
     delete: function (user_id, cb) {
-        orm.deleteOne("burgers", "id", user_id, function (res) {
+        orm.delete("burgers", "id", user_id, function (res) {
             cb(res);
         });
     }

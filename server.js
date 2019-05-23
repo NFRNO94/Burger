@@ -1,10 +1,10 @@
-let express = require("express");
-let exphbs = require("express-handlebars");
-let routes = require("./controllers/burgers_controller.js");
+const express = require("express");
+const exphbs = require("express-handlebars");
+const routes = require("./controllers/burgers_controller.js");
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
-let app = express();
+const app = express();
 
 app.use(express.static("public"));
 
@@ -16,6 +16,6 @@ app.set("view engine", "handlebars");
 
 app.use(routes);
 
-app.listen(PORT, function() {
-  console.log("App now listening at localhost:" + PORT);
+app.listen(PORT, function () {
+  console.log("App now listening at http://localhost:" + PORT);
 });
