@@ -1,0 +1,10 @@
+USE `uh31qrnogqku1yr6`;
+CREATE TABLE burgers
+(
+    id int NOT NULL
+    AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    devoured BOOLEAN DEFAULT false,
+    createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY(id)
+);

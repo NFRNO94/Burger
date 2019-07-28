@@ -1,3 +1,5 @@
+USE `uh31qrnogqku1yr6`;
+
 INSERT INTO burgers (name)
 VALUES ("Southwestern Burger");
 
